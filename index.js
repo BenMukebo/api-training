@@ -21,27 +21,39 @@ function getTodos (resource, callBack){
 
 //Nexting a request inside a callback function (data)
 
-getTodos('todos/locki.json', (err, data) => {
-  console.log('CallBack Fired');
-  console.log(data)
+// getTodos('todos/locki.json', (err, data) => {
+//   console.log('CallBack Fired');
+//   console.log(data)
 
-  getTodos('todos/mariot.json', (err, data) => {
-    if(err){
-      console.log('could not fetch data mariot');
-    }
-    else{
-      console.log(data);
-      getTodos('todos/zengi.json', (err, data) => {
-        // if(err){
-        //   console.log('could not fetch data zengi');
-        // }
-        // else{
-          console.log(data);
-        // }
-      });
-    }
+//   getTodos('todos/mariot.json', (err, data) => {
+//     if(err){
+//       console.log('could not fetch data mariot');
+//     }
+//     else{
+//       console.log(data);
+//       getTodos('todos/zengi.json', (err, data) => {
+//         // if(err){
+//         //   console.log('could not fetch data zengi');
+//         // }
+//         // else{
+//           console.log(data);
+//         // }
+//       });
+//     }
+//   });
+// });
+
+// Promise exemple
+
+const getSomething = () => {
+  return new Promise((resolve, reject) => {
+    resolve("some data"); // work like return, both can't work
+    reject("some error"); // once on of them match automatically it's skip the following one
   });
-});
+};
 
-console.log(3);
-console.log(4);
+getSomething().then((data) => {
+  console.log(data);
+}, (err) => {
+  console.log(err);
+});
