@@ -19,8 +19,7 @@ function getTodos (resource, callBack){
   request.send();
 };
 
-console.log(1);
-console.log(2);
+//Nexting a request inside a callback function (data)
 
 getTodos('todos/locki.json', (err, data) => {
   console.log('CallBack Fired');
