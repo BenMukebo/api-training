@@ -25,12 +25,21 @@ function getTodos (resource){
 //Nexting a request inside a callback function (data)
 // getTodos('todos/locki.json', (err, data) => {
 //   console.log('CallBack Fired');
-//   console.log(data)
+  // console.log(data)
+    // getTodos('todos/zengi.json', (err, data) => {
+        // console.log(data);
+      // });
 // });
 
 getTodos('todos/locki.json').then(data => {
-  console.log('promise resolved:', data);
+  console.log('promise 1 resolved:', data);
+  return getTodos('todos/mariot.json');
+}).then(data => {
+  console.log('promise 2 resolved:', data);
+  return getTodos('todos/zengi.json');
+}).then(data => {
+  console.log('promise 3 resolved:', data);
 }).catch(err => {
-  console.log('promise rejcted:', err)
+  console.log('promise rejcted:', err);
 });
 
