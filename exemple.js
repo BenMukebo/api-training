@@ -21,7 +21,11 @@ const getSomething = () => {
 
 
 
-//   // https://developer.mozilla.org/fr/docs/Web/HTTP/Status
+
+
+// CALLBACK FUNCTION
+
+// https://developer.mozilla.org/fr/docs/Web/HTTP/Status
 
 // function getTodos (resource, callBack){
 //     const request = new XMLHttpRequest();
@@ -49,20 +53,15 @@ const getSomething = () => {
 //     console.log(data)
   
 //     getTodos('todos/mariot.json', (err, data) => {
-//       if(err){
-//         console.log('could not fetch data mariot');
-//       }
-//       else{
-//         console.log(data);
-//         getTodos('todos/zengi.json', (err, data) => {
-//           // if(err){
-//           //   console.log('could not fetch data zengi');
-//           // }
-//           // else{
-//             console.log(data);
-//           // }
-//         });
-//       }
+//       console.log(data);
+//       getTodos('todos/zengi.json', (err, data) => {
+//         if(err){
+//           console.log('could not fetch data zengi');
+//         }
+//         else{
+//           console.log(data);
+//         }
+//       });
 //     });
 //   });
   

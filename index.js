@@ -1,7 +1,7 @@
 // https://developer.mozilla.org/fr/docs/Web/HTTP/Status
 
 function getTodos (resource){
-  return new Promise ((resolve, reject) => {
+  return new ((resolve, reject) => {
     const request = new XMLHttpRequest();
   
     request.addEventListener('readystatechange', () => {
