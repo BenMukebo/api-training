@@ -14,9 +14,11 @@
 const getTodos = async () => {
   const response = await fetch('todos/locki.json');
   const data = await response.json();
+  
 //   console.log(data);
   return data;
 };
 
 getTodos()
-  .then(data => console.log('resolved:', data));
+  .then(data => console.log('resolved:', data))
+  .catch(err => console.log('rejected', err.message));
