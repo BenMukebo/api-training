@@ -1,5 +1,5 @@
 [
-    { text: "play mariokat", "auther": "locki" },
+    { "text": "play mariokat", "auther": "locki" },
     { "text": "play okiWaki", "auther": "locki" },
     { "text": "play Zumazi", "auther": "locki" }
 ]

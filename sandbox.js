@@ -12,13 +12,16 @@
 // async & await
 
 const getTodos = async () => {
-  const response = await fetch('todos/locki.json');
+  const response = await fetch('odos/locki.json');
+
+  if(response.status !== 200){
+    throw new Error('can not fetch the data');
+  }
   const data = await response.json();
-  
 //   console.log(data);
   return data;
 };
 
 getTodos()
   .then(data => console.log('resolved:', data))
-  .catch(err => console.log('rejected', err.message));
+  .catch(err => console.log('rejected', err.message)); //".message it's just for changing color"
