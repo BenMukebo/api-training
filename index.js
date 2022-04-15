@@ -25,7 +25,6 @@
 //   }
 // });
 
-
 // JavaScript Callbacks W3School
 
 function myDisplayer(some) {
