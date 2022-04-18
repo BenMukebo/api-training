@@ -1,4 +1,4 @@
-// Promise exemple
+// PROMISE SIMPLE EXEMPLE CASE
 
 const getSomething = () => {
     return new Promise((resolve, reject) => {

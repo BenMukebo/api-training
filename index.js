@@ -1,45 +1,55 @@
 // https://developer.mozilla.org/fr/docs/Web/HTTP/Status
 
-function getTodos (resource){
-  return new ((resolve, reject) => {
-    const request = new XMLHttpRequest();
-  
-    request.addEventListener('readystatechange', () => {
-      if(request.readyState === 4 && request.status === 200) {
-        const data = JSON.parse(request.responseText);
-        // callBack(undefined, data);
-        resolve(data);
-      }
-      else if(request.readyState === 4) {
-        // callBack('could not fetch data', undefined);
-        reject('error getting resource');
-      }
-    });
-      // request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
-      request.open('GET', resource);
-      request.send();
-  });
-  
-};
+// PROMISE REAL CASE 
 
-//Nexting a request inside a callback function (data)
-// getTodos('todos/locki.json', (err, data) => {
-//   console.log('CallBack Fired');
-  // console.log(data)
-    // getTodos('todos/zengi.json', (err, data) => {
-        // console.log(data);
-      // });
+// function getTodos (resource){
+//   return new Promise ((resolve, reject) => {
+//     const request = new XMLHttpRequest();
+  
+//     request.addEventListener('readystatechange', () => {
+//       if(request.readyState === 4 && request.status === 200) {
+//         const data = JSON.parse(request.responseText);
+//         resolve(data);
+//       }
+//       else if(request.readyState === 4) {
+//         reject('error getting resource');
+//       }
+//     });
+
+//     request.open('GET', resource);
+//     request.send();
+//   });
+  
+// };
+
+// getTodos('todos/locki.json').then(data => {
+//   console.log('promise 1 resolved:', data);
+//   return getTodos('todos/mariot.json');
+// }).then(data => {
+//   console.log('promise 2 resolved:', data);
+//   return getTodos('todos/zengi.json');
+// }).then(data => {
+//   console.log('promise 3 resolved:', data);
+// }).catch(err => {
+//   console.log('promise rejcted:', err);
 // });
 
-getTodos('todos/locki.json').then(data => {
-  console.log('promise 1 resolved:', data);
-  return getTodos('todos/mariot.json');
-}).then(data => {
-  console.log('promise 2 resolved:', data);
-  return getTodos('todos/zengi.json');
-}).then(data => {
-  console.log('promise 3 resolved:', data);
-}).catch(err => {
-  console.log('promise rejcted:', err);
+
+
+let p = new Promise((resolve, reject) => {
+
+  let a = 2 + 1;
+
+  if (a == 2) {
+    resolve("Success");
+  } else {
+    reject("Failed");
+  }
+});
+
+p.then(message => {
+  console.log('Good this is a then ' + message);
+}).catch(message => {
+  console.log('Bad This is a catch' + message);
 });
 
